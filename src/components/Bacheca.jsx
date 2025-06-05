@@ -1,15 +1,16 @@
+import style from "./ListBtn.module.css"
+
 const Bacheca = ({ title, text, open }) => {
 
     return (
     
-    <div>
-    <div>
-        {open && <div className="singolaBacheca">
+    <>
+        {open && <div className={style.bachecaItem}>
             <h2>{title}</h2>
             <p>{text}</p>
         </div>}
-    </div>
-    </div>
+    </>
+    
 )
 
 }

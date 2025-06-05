@@ -1,0 +1,9 @@
+.sezioneBottoni {
+    display: flex;
+    gap: 5px;
+    padding: 40px 0px;
+}
+
+.bachecaItem {
+    border: 2px solid black;
+}

@@ -1,22 +1,24 @@
-import style from "./Main.module.css"
+import style from "./ListBtn.module.css"
 import AppButton from "./AppButtons.jsx"
 import Bacheca from "./Bacheca.jsx"
 import { useState } from "react"
 
 
 const ListBtn = ({ ArrayLeng }) => {
-
+    
     const [activeLeng, setActiveLeng] = useState(null)
 
     return (
         <>
-            <div className="sezioneBottoni">
+            <div className={style.sezioneBottoni}>
                 {ArrayLeng.map((curLeng) =>
                     <AppButton
                         key={curLeng.id}
                         text={curLeng.title}
                         funzione = {() => 
-                            setActiveLeng(curLeng.id)
+                            activeLeng === curLeng.id
+                            ? setActiveLeng(null)
+                            : setActiveLeng(curLeng.id)
                             
                         }
                          />
@@ -29,7 +31,6 @@ const ListBtn = ({ ArrayLeng }) => {
                         title={curLeng.title}
                         text={curLeng.description}
                         open={curLeng.id === activeLeng} 
-
                         />
                 )}
             </div>
